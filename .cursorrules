@@ -1,0 +1,31 @@
+This is a file that explains my thought process and decisions for the take-home challenge. I want this to help lead the development.
+
+# Assessment Plan
+After reading Take-Home Challenge _ AI Engineer, My understanding of the main components/decisions I have control over. 
+
+Retrieval Mechanism
+- vector search vs hybrid search
+- embedding model:
+-- I am not very familiar with the differences between these it's really important to understand the tradeoffs given the datasets.
+-- How am I going to determine the most appropriate embedding model?
+-- OpenAI vs Cohere embeddings
+
+Generation Framework
+- OpenAI model/s or Hugging Face model/s?
+- My assumption here is that I will have to optimise the pipeline by selecting lihgtwieght llm's for fast, low-reasoning tasks and chain-of-thought (reasoning) llm's for complex reasoning tasks. I know that they also work close the unsloth (llm optimisation library), so perhaps it's also good to consider this library.
+
+Agentic Frameworks 
+- Which frameworks can I choose from? I see on the job description they included Autogen, should I choose this framework?
+
+Evaluation Criteria
+- What tools do I have to chose from here, during my intial discussion I did have some conversations about langgraph 
+
+Datasets
+Looking at: nrma-car-pds-spds007-1023-nsw-act-qld-tas
+First thoughts 
+- This pdf contains a lot of tables, I think I need to accurately parse the text, tables, there are also flow diagrams, I wonder if these need to be parsed by a visual llm model or whether simply parsing the text will be sufficient.
+
+Looking at: allianz-personal-motor-insurace
+First thoughts
+- These are two competing insurance companies, I wonder how to set up the vector search as we defintely would not want to conflate the policies of the two companies.
+

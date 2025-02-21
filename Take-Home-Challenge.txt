@@ -1,0 +1,92 @@
+
+2
+ 
+Take-Home Challenge | AI Engineer 
+ 
+INTRODUCTION 📖 
+This challenge will allow you to showcase your skills, strategic thinking and technical ability 
+by completing a technical challenge or presentation. 
+ 
+You will present this task to Aman Arora, Lead AI Engineer, and Satya Borgohain, AI 
+Engineer so we can learn more about how you perform in your craft and you can get a feel 
+for the type of work youʼd be doing. 
+ 
+WHAT TO EXPECT 📄 
+ 
+During the interview, you will be asked probing questions to test your understanding and to 
+give you the chance to demonstrate your ability. The structure of the meeting will be;   
+●  30 minutes presentation 
+●  20 minutes Q&A and;  a
+●  10 minutes for you to ask any further questions.  
+ 
+PRESENTATION FORMAT 💻 
+ 
+You can present this back in any format you choose. Most commonly we see Google 
+Slides/Powerpoint presentations, however we encourage you to use the format that is most 
+comfortable to you.  
+ 
+SUBMISSION GUIDELINES  📧 
+ 
+Please send through your presentation to tao@relevanceai.com at least 3 hours prior to 
+your interview commencing.  
+ 
+ 
+ASSESSMENT RUBRIC ✅ 
+ 
+Assessment Attributes  Weighting 
+Ability to write good code  40% 
+Ability to learn new concepts  30% 
+Ability to research and bring scientific 
+evaluation to models/ processes 
+30% 
+ 
+ 
+ 
+ 
+CONTEXT & ADDITIONAL INFORMATION 🧠 
+ 
+The goal is to assess your ability as an AI engineer to code and evaluate machine learning 
+pipelines. 
+ 
+You will utilise the following datasets: 
+ 
+https://www.nrma.com.au/sites/nrma/files/nrma/policy_booklets/nrma-car-pds-1023-east.p
+df 
+ 
+https://www.allianz.com.au/openCurrentPolicyDocument/POL011BA/$File/POL011BA.pdf 
+TASK 📝 
+Your task is to create at least 2 different RAG pipelines 1 agentic rag, 1 rag) for the provided 
+data, and then compare and evaluate the performance between the pipelines. 
+ 
+1.  Create the retrieval frameworks. i.e. could be hybrid search vs vector search. vector 
+search using Openai embeddings vs Cohere embeddings 
+2.  Create the generation frameworks. i.e. could be out of the box GPT vs fine tuned 
+Mistral. 
+3.  Create the agentic frameworks to call the RAG pipelines. 
+4.  Create an evaluation framework to compare and evaluate the performance between 
+the pipelines. 
+ 
+Ideal frameworks to utilise: 
+●  Hugging Face 
+●  LangChain 
+●  LlamaIndex 
+●  NumPy 
+●  PyTorch, etc. 
+Tips: 
+●  Write production-quality code. This means using .py files with a clear folder 
+structure rather than Jupyter notebooks. 
+●  Submit your work via GitHub repository or a compressed folder of code files. 
+Recommended time allocation to complete: 2 hours 
+ 
+END DELIVERABLE 👍 
+ 
+●  Functional RAG pipelines with clear documentation. 
+●  A structured, well-written codebase following best practices. 
+●  A performance comparison between different retrieval and generation strategies. 
+●  A well-thought-out evaluation framework. 
+POINT OF CONTACT ❓ 
+ 
+If you have any questions during the preparation of your challenge, please reach out to 
+tao@relevanceai.com 
+ 
+Good luck! Weʼre looking forward to your presentation!  
