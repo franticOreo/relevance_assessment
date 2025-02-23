@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 import os
 
 def get_openai_embeddings():
