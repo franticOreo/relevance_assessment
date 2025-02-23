@@ -1,2 +1,0 @@
-Assumptions about use of llm:
-- Majority of queries will be Specific single or possibly multi-hop questions.

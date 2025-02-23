@@ -1,5 +1,11 @@
-Plan for development:
+Plan of delivery:
+* let me know if this is bad idea, I was thinking if I could just run this entire project as a docker container (not sure where it would be running), so the assesor can simply plug into my project and query it.
+* I was thinking the docker container could run the assessor could intferface via cli.
+-- e.g choose a rag method: vanilla rag, agentic rag
+-- query documents with a question.
 
+
+Plan for development:
 1. Evaluate the Dense Retriever in Isolation
 Goal: Compare its standalone performance against BM25 and the Hybrid version.
 Action Items:
@@ -41,3 +47,7 @@ Integrate a step that generates a “hypothetical” doc for each query using an
 Encode that hypothetical doc with your chosen encoder (e.g., GTE-Small, Cohere, etc.).
 Retrieve actual docs from your corpus based on vector similarity.
 Compare results to your baseline retrieval pipelines.
+
+left over:
+1. check eval metrics works.
+2. how to handle env vars.
