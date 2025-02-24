@@ -99,6 +99,7 @@ Below is a concise look at the main directories under `src/rag/`:
   - The entry point that sets up the overall Retrieval-Augmented Generation pipeline, including environment variable loading, retriever creation, and LLM model configuration.
 
 Project file structure:
+```
 ├── rag
 │   ├── chains
 │   │   └── long_qa_chain.py
@@ -131,6 +132,7 @@ Project file structure:
 │       ├── bm25_retriever.py
 │       ├── hybrid_retriever.py
 │       └── vector_retriever.py
+```
 
 ### Prerequisites
 - Python 3.11+
@@ -159,31 +161,6 @@ Run the script:
 ```bash
 python src/rag/main.py
 ```
-
-# Quick Overview of File Structure
-
-Below is a concise look at the main directories under `src/rag/`:
-
-- **chains/**  
-  - Contains specialized *chain* classes (e.g., `LongQAChain` for handling multi-document QA logic).
-
-- **embeddings/**  
-  - Stores various embedding providers (e.g., `openai_embeddings.py`, `cohere_embeddings.py`) responsible for generating vector representations of documents.
-
-- **evaluation/**  
-  - Houses the evaluation framework (e.g., `pipeline_evaluator.py`, `metric_calculations.py`) that calculates retrieval and generation metrics, orchestrates test datasets, and provides scoring logic.
-
-- **generation/**  
-  - Implements different approaches for RAG-based generation (e.g., `standard_rag.py` for a straightforward pipeline, `agentic_rag.py` for more dynamic or "agentic" reasoning flows).
-
-- **loader/**  
-  - Manages document loading utilities (e.g., `document_loader.py` for reading raw PDFs or text and splitting them into workable chunks).
-
-- **retrieval/**  
-  - Implements retrieval mechanisms (e.g., `bm25_retriever.py`, `vector_retriever.py`, `hybrid_retriever.py`) that fetch relevant documents from the knowledge corpus.
-
-- **main.py**  
-  - The entry point that sets up the overall Retrieval-Augmented Generation pipeline, including environment variable loading, retriever creation, and LLM model configuration.
 
 
 
