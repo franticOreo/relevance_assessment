@@ -9,7 +9,7 @@ class OpenAILLM(BaseLLMWrapper):
     
     def __init__(
         self,
-        model_name: str = "gpt-3.5-turbo",
+        model_name: str = "gpt-4o-mini",
         temperature: float = 0.7,
         max_tokens: int = 512,
         **kwargs: Any

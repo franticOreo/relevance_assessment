@@ -41,7 +41,7 @@ class AgenticRAG:
         # Get the appropriate LLM instance
         llm = (self.llm_model if isinstance(self.llm_model, BaseChatModel) 
                else ChatOpenAI(model_name=self.llm_model if isinstance(self.llm_model, str) 
-                             else getattr(self.llm_model, 'model_name', 'gpt-3.5-turbo')))
+                             else getattr(self.llm_model, 'model_name', 'gpt-4o-mini')))
         
         # Create the LCEL chains with proper retrieval setup using invoke
         self.short_qa_pipeline = (

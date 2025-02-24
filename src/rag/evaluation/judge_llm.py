@@ -24,7 +24,8 @@ class JudgeLLM:
         self,
         model: Optional[BaseChatModel] = None,
         model_name: str = "gpt-4",
-        temperature: float = 0.0
+        temperature: float = 0.0,
+        api_key: Optional[str] = None
     ):
         """
         Initialize the judge LLM.
@@ -33,11 +34,12 @@ class JudgeLLM:
             model: Optional pre-configured LLM model
             model_name: Name of the OpenAI model to use if no model provided
             temperature: Sampling temperature for the LLM
+            api_key: OpenAI API key
         """
         self.judge_llm = model or ChatOpenAI(
-            model_name=model_name,  # Fixed: Changed model to model_name
+            model_name=model_name,
             temperature=temperature,
-            api_key=os.getenv("OPENAI_API_KEY")
+            api_key=api_key
         ).with_structured_output(JudgeResponse)
 
     def evaluate(

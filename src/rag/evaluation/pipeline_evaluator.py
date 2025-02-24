@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from rag.evaluation.metric_calculations import MetricsCalculator
 from rag.retrieval.hybrid_retriever import HybridRetriever
 from rag.retrieval.bm25_retriever import BM25Retriever
@@ -11,12 +11,28 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from rag.embeddings.openai_embeddings import get_openai_embeddings
 from rag.evaluation.judge_llm import JudgeLLM
+import os
 
 
 class PipelineEvaluator:
-    def __init__(self, test_dataset: List[Dict[str, Any]], documents: List[Document]):
+    def __init__(
+        self, 
+        test_dataset: List[Dict[str, Any]], 
+        documents: List[Document],
+        api_key: Optional[str] = None
+    ):
+        """Initialize the evaluator with test dataset and documents.
+        
+        Args:
+            test_dataset: List of test cases
+            documents: List of documents to use for retrieval
+            api_key: Optional API key for OpenAI services
+        """
         self.test_dataset = test_dataset
         self.documents = documents
+        self.api_key = api_key or os.getenv("api_key")
+        if not self.api_key:
+            raise ValueError("OpenAI API key must be provided either through constructor or environment variable")
         self.metrics_calculator = MetricsCalculator()
         
     def evaluate_pipeline_variant(
@@ -27,18 +43,28 @@ class PipelineEvaluator:
     ) -> Dict[str, Any]:
         """Evaluate a specific pipeline variant."""
         if is_agentic:
-            pipeline = AgenticRAG(retriever=retriever, llm_model=llm)
+            pipeline = AgenticRAG(
+                retriever=retriever, 
+                llm_model=llm,
+                api_key=self.api_key
+            )
         else:
-            # Assuming you'll create a standard RAG pipeline class
-            pipeline = StandardRAG(retriever=retriever, llm=llm)
+            pipeline = StandardRAG(
+                retriever=retriever, 
+                llm=llm,
+                api_key=self.api_key
+            )
             
-        # Create a JudgeLLM instance instead of using OpenAILLM directly
-        judge = JudgeLLM(model_name="gpt-3.5-turbo")
+        # Create a JudgeLLM instance with the API key
+        judge = JudgeLLM(
+            model_name="gpt-4o",
+            api_key=self.api_key
+        )
             
         return self.metrics_calculator.evaluate_pipeline(
             pipeline=pipeline,
             test_dataset=self.test_dataset,
-            judge_llm=judge  # Use the JudgeLLM instance
+            judge_llm=judge
         )
 
     def run_all_evaluations(self) -> Dict[str, Any]:
